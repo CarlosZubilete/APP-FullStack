@@ -11,12 +11,6 @@ function DigimonPage() {
   // Propiedad : alias
   const {digimones: listALL , loading} = useDigimons();
   
-  // Creamos una copia de la lista con spread operator 
-    // const copyListaObjetos = list.map((elemento) => {
-    //   return {...elemento};
-    // });
-  //   let copyListaObjetos = [...list]; 
-
   useEffect(() => 
     setListaObjetos(listALL) 
     , [listALL] )

@@ -19,6 +19,10 @@ const router = createBrowserRouter([
           path: '/digimonsPage',
           Component: DigimonPage
         },
+        {
+          path: '/digimonsPage/:name',
+          element: <p>Soy un detalle de digimon</p>,
+        }
       ]
   }
 ])

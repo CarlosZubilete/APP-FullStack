@@ -1,18 +1,8 @@
-import UserCard from './UserCard.jsx';
+//import UserCard from './UserCard.jsx';
 import '../styleSheet/DigimpnList.css'
+import DigimonCard from './DigimonCard.jsx'
 
 function DigimonList({listaObjetos,loading}){
-
-  // Renderizamos el array de objetos 
-  // const list = listaObjetos.map((digimon,key) => { 
-  //   return(
-  //     <li key={key}> 
-  //       <UserCard user={{
-  //         name: digimon.name , 
-  //         avatar: digimon.img}}/>
-  //     </li>
-  //   )
-  // })
 
   if (loading){
     return (
@@ -25,15 +15,17 @@ function DigimonList({listaObjetos,loading}){
       <p>No se encontraron elementos en la lista</p>
     )
   }
+
   return(
     <ul className='listaDigimon'>
       {/* {list} */}
       {
       listaObjetos.map((digimon,key) => 
         <li key={key}> 
-          <UserCard user={{
+          <DigimonCard digimons={{
             name: digimon.name, 
-            avatar: digimon.img}}/>
+            avatar: digimon.img,
+            level: digimon.level}}/>
         </li>)    
       }
     </ul>

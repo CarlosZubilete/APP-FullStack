@@ -1,0 +1,30 @@
+.digimonCard{
+  width: 80%;
+  padding: .3rem;
+  margin: 0  0 .5rem 0  ;
+  padding: .5rem;
+  border: 1px solid black;
+  border-radius: 20px;
+  user-select: none;
+  background: #efefef;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.digimonCard__avatar{
+  max-height: 10rem;
+  margin-top: -.5rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  object-fit: cover;
+  user-select: none;
+}
+
+.digimonCard__name{
+  color: #07006f;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

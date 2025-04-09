@@ -1,0 +1,15 @@
+.header{
+  border-bottom: 1px solid #afafaf;
+  display: flex;
+  margin-bottom: 1rem;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__title{
+  text-align: center;
+  letter-spacing: .2rem;
+  font-weight: bolder;
+  margin: 0 .3rem;
+  
+}

@@ -1,0 +1,25 @@
+.navBar{
+  /* border: 1px solid red; */
+  width: 50%;
+  display: flex;
+}
+
+.navBar__ul{
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navBar__ul__li__a{
+  color: #afafaf;
+  font-weight: bold;
+  letter-spacing: .2rem;
+  transition: all .3s ease;
+}
+
+.navBar__ul__li__a:hover{
+  color: lightblue;
+  cursor: pointer;
+}

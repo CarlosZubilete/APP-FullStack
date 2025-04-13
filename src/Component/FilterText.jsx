@@ -8,6 +8,7 @@ function FilterText({onFilter}){
       evento.preventDefault() // elimina el comportamiento por defecto 
       onFilter(filterTxt);
     }
+    
     const handleFilterTxtChange = (evento) => {
       setFilterTxt(evento.target.value);
       

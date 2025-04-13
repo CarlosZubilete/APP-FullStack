@@ -2,6 +2,8 @@ import InstrumentList from './InstrumentList.jsx';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import '../styleSheet/InstrumentePage.css';
+import NavBarInstruments from './NavBarInstruments.jsx';
+
 // http://localhost:9000/api/instrumentos
 function InstrumentPage(){
 
@@ -28,6 +30,7 @@ function InstrumentPage(){
   return(
     <div className='instrumentePage'>
       <h1 className='instrumentePage__title'>Instrument List</h1>
+      <NavBarInstruments />
       <InstrumentList listaInstrumentos={instruments}/>
     </div>
   )

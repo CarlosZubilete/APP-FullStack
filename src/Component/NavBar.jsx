@@ -11,6 +11,9 @@ function NavBar(){
         <li className='navBar__ul__li'>
           <Link to='/digimonsPage' className='navBar__ul__li__a'>Digimons</Link>
         </li>
+        <li className='navBar__ul__li'>
+          <Link to='/instrumentsPage' className='navBar__ul__li__a'>Instruments</Link>
+        </li>
       </ul>
     </nav>
   )

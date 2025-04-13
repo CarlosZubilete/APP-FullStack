@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import DigimonPage from './Component/DigimonPage.jsx'
 import DigimonDetail from './Component/DigimonDetail.jsx'
+import InstrumentPage from './Component/InstrumentPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,12 @@ const router = createBrowserRouter([
         {
           path: '/digimonsPage/:name',
           Component: DigimonDetail,
+        },
+        {
+          path: '/instrumentsPage',
+          Component: InstrumentPage
         }
+        
       ]
   }
 ])

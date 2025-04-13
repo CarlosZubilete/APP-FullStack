@@ -7,7 +7,7 @@ import DigimonPage from './Component/DigimonPage.jsx'
 import DigimonDetail from './Component/DigimonDetail.jsx'
 import InstrumentPage from './Component/InstrumentPage.jsx'
 import AddInstrument from './Component/AddInstrument.jsx'
-
+import EditInstrument from './Component/EditInstrument.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +33,10 @@ const router = createBrowserRouter([
         {
           path: '/addInstrument',
           Component: AddInstrument,
+        },
+        {
+          path: '/editInstrument',
+          Component: EditInstrument,
         }
       ]
   }

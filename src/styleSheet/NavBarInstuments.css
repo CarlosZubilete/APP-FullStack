@@ -1,0 +1,28 @@
+.navBarInstrument{
+  /* border: 1px solid red; */
+  border-bottom: 1px solid #afafaf;
+  border-top: 1px solid #afafaf;
+  width: 100%;
+  display: flex;
+}
+
+.navBarInstrument__ul{
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navBarInstrument__ul__li__a{
+  color: #afafaf;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: .2rem;
+  transition: all .3s ease;
+}
+
+.navBarInstrument__ul__li__a:hover{
+  color: lightgreen;
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.instrumentCard {
+  border: 1px solid #ddd;
+  /* width: 100%; */
+  border-radius: 8px;
+  margin: .2rem .1rem;
+  padding: 1rem;
+  /* background-color: #ffffff; */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.instrumentCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.instrumentCard__p {
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+  letter-spacing: .1em;
+  margin: 4px 0;
+}

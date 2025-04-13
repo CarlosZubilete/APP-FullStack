@@ -1,4 +1,5 @@
 import InstrumentCard from './InstrumentCard';
+import '../styleSheet/InstrumentList.css'
 
 function InstrumentList({listaInstrumentos}){
 
@@ -8,10 +9,10 @@ function InstrumentList({listaInstrumentos}){
       sin las llaves, ya que devolvera underdined
   */
   return (
-    <ul>
+    <ul className='instumentList'>
       {
         listaInstrumentos.map((instrumento) => 
-          <li key={instrumento.id}>
+          <li className='instumentList__li' key={instrumento.id}>
             <InstrumentCard instrument={{
               id: instrumento.id, 
               name: instrumento.name,

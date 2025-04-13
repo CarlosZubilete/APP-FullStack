@@ -1,8 +1,9 @@
 .instrumentPage{
+  width: 100%;
   padding: 2rem;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+  /* background-color: #f8f9fa; */
+  /* color: #333; */
 }
 
 .instrumentePage__title {

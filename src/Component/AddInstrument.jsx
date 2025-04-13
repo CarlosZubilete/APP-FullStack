@@ -63,11 +63,7 @@ function AddInstrument(){
         </label>
         <button type='submit' className='AddInstrument__button'>Add Instument</button>
       </form>
-      {/* <p>Name: {name}</p>
-      <p>Price: {price}</p>
-      <p>Description: {description}</p>
-      <p>type: {type}</p> */}
-      <div>
+      <div className='AddInstrument__contenedor__button'>
         <button> 
           <Link to='/instrumentsPage' className=''>Back</Link>
         </button>

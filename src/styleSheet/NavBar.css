@@ -1,5 +1,6 @@
 .navBar{
   /* border: 1px solid red; */
+  border-left: 1px solid #afafaf ;
   width: 50%;
   display: flex;
 }
@@ -14,6 +15,7 @@
 
 .navBar__ul__li__a{
   color: #afafaf;
+  font-size: 1.3rem;
   font-weight: bold;
   letter-spacing: .2rem;
   transition: all .3s ease;

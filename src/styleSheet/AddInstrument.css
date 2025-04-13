@@ -50,3 +50,10 @@
 .AddInstrument__button:hover {
   background-color: #0056b3;
 }
+
+
+.AddInstrument__contenedor__button{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+}

@@ -69,9 +69,9 @@ function EditInstrument(){
           <input type='text' className='AddInstrument__input' id='type' name='type'
           onChange={(e)=>setType(e.target.value)} value={type} />
         </label>
-        <button type='submit' className='AddInstrument__button'>Add Instument</button>
+        <button type='submit' className='AddInstrument__button'>Edit Instument</button>
       </form>
-      <div>
+      <div className='AddInstrument__contenedor__button'>
         <button> 
           <Link to='/instrumentsPage' className=''>Back</Link>
         </button>

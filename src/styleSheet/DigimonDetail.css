@@ -1,0 +1,31 @@
+.digimonDetalle{
+  /* border: solid 1px red; */
+  width: 50%;
+}
+
+.digimonDetalle__title{
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: .1rem;
+}
+
+.digimonDetalle__contenedor{
+  border: 1px solid white;
+  width: 100%;
+  padding: 0.5rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digimonDetalle__contenedor__leftt__name,
+.digimonDetalle__contenedor__leftt__level{
+  font-size: 1.1rem;
+  padding: 0 1rem 0 0 ;
+}
+
+.digimonDetalle__contenedor__right__img{
+  max-height: 12rem;
+  border-radius: 50%;
+  object-fit: cover;
+}

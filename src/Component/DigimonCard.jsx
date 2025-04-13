@@ -1,6 +1,7 @@
 import '../styleSheet/DidimonCard.css'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router' 
 
+// Renderizado por  Digimonlist.jsx
 function DigimonCard({digimons}){
 
   const navigate = useNavigate()

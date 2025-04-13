@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import './index.css'
 import App from './App.jsx'
 import DigimonPage from './Component/DigimonPage.jsx'
-
+import DigimonDetail from './Component/DigimonDetail.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/digimonsPage/:name',
-          element: <p>Soy un detalle de digimon</p>,
+          Component: DigimonDetail,
         }
       ]
   }

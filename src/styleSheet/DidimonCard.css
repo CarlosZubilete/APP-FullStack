@@ -6,6 +6,7 @@
   border: 1px solid black;
   border-radius: 20px;
   user-select: none;
+
   background: #efefef;
   display: flex;
   flex-direction: column;
@@ -27,4 +28,23 @@
   color: #07006f;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.digimonCard__info{
+  border-right: 0.5px solid  #07006f;
+  border-left: 0.5px solid  #07006f;
+  border-radius: 2.5rem;
+  color: gray;
+  padding: 0 .3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all ease .3s ;
+
+}
+
+.digimonCard__info:hover{
+  color: black;
+  cursor: pointer;
+  letter-spacing: .2rem;
+  
 }

@@ -8,6 +8,8 @@ function InstrumentList({listaInstrumentos}){
       Cuando renderizar con map(()={})
       sin las llaves, ya que devolvera underdined
   */
+  // !TODO: no mostrar el id, agregar un filtro de busqueda + AddInstrument 
+  // !TODO: Cuando entra el instrumento detalle. mostrar editar y eliminar. 
   return (
     <ul className='instumentList'>
       {

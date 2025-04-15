@@ -1,5 +1,5 @@
 //import UserCard from './UserCard.jsx';
-import '../styleSheet/DigimpnList.css'
+import '../styleSheet/DigimonList.css'
 import DigimonCard from './DigimonCard.jsx'
 
 function DigimonList({listaObjetos,loading}){

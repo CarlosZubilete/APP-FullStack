@@ -7,7 +7,7 @@ import { useNavigate,Link } from 'react-router';
 function AddInstrument(){
 
   const[name,setName] = useState('');
-  const[price,setPrice] = useState('0');
+  const[price,setPrice] = useState('');
   const[description,setDescription] = useState('');
   const[type,setType] = useState('');
   const[error,setError] = useState(false);

@@ -11,9 +11,10 @@ function DigimonCard({digimons}){
   }
 
   return (
-    <div onClick={handleSelected} className='digimonCard'>
+    <div  className='digimonCard'>
       <p className='digimonCard__name'>{digimons.name}</p>
       <img src={digimons.avatar} className={'digimonCard__avatar'} />
+      <p onClick={handleSelected} className='digimonCard__info'>Info</p>
     </div>
   )
 }

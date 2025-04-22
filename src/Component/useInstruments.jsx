@@ -8,7 +8,7 @@ function useInstruments(){
   const [error,setError] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:9000/api/instrumentos')
+    axios.get('http://localhost:9000/instruments')
       .then((response) => {
         setInstruments(response.data);
       })

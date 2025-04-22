@@ -1,74 +1,69 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import '../styleSheet/AddInstrument.css'
-import axios from 'axios';
 import { useNavigate,Link } from 'react-router';
+import { Formik, Form , Field , ErrorMessage} from 'formik';
+import useNewInstrumet from './useNewInstrument.jsx';
 
+const ErrorBack = () => {
+  return <h2 style={{fontSize:'1.2rem', color:'red'}}>BackEnd says: "Error Bad Request" </h2>;
+}
+
+const ErrorOne = ({children}) => {
+  return <span style={{fontSize:'.6rem', color:'red' , fontWeight:'bold'}}> {children} </span>
+}
 
 function AddInstrument(){
 
-  const[name,setName] = useState('');
-  const[price,setPrice] = useState('');
-  const[description,setDescription] = useState('');
-  const[type,setType] = useState('');
-  const[error,setError] = useState(false);
-
+  const{handleSubmitForm,error,success,validateFormik} = useNewInstrumet();
+  
   const navigate = useNavigate();
   
+  useEffect(()=>{
+    if(success){
+      navigate('/instrumentsPage')
+    }
+  },[success])
 
-  const handleSubmitForm = (evento) => {
-    // 1. Evitamos que se envie el formulario
-    evento.preventDefault();
-    // 2. Creamos un objeto json 
-    const body = Object({
-      name,
-      price,
-      description,
-      type
-    })
 
-    // 3. Enviamos la peticion POST
-    axios.post('http://localhost:9000/api/instrumentos',JSON.stringify(body),{
-      headers: {
-        'Content-Type': 'application/json'
+  return(<>
+    <span>{error && <ErrorBack/>}</span>
+    <Formik 
+        initialValues={{name:'', price:'',description:'', type:''}}
+        onSubmit={handleSubmitForm} 
+        validate={validateFormik}
+        >
+        {({isSubmitting}) =>
+          <Form className='AddInstrument'>
+            <div>
+              <label htmlFor='name' className='AddInstrument__label'>Name: 
+                <Field type='text' className='AddInstrument__input' id='name' name='name'/>
+                <ErrorMessage name='name' component={ ErrorOne }/>
+              </label>
+              <label htmlFor='price' className='AddInstrument__label'>Price:
+                <Field type='number' className='AddInstrument__input' id='price' name='price'/>
+                <ErrorMessage name='price' component={ErrorOne}/>
+              </label>
+              <label htmlFor='description' className='AddInstrument__label'>Description:
+                <Field type='text' className='AddInstrument__input' id='description' name='description'/>
+                <ErrorMessage name='description' component={ErrorOne}/>
+              </label>
+              <label htmlFor='type' className='AddInstrument__label'>Type:
+                <Field type='text' className='AddInstrument__input' id='type' name='type'/>
+                <ErrorMessage name='type' component={ErrorOne}/>
+              </label>
+            </div>
+            <button type='submit'  disabled={isSubmitting}
+              className='AddInstrument__button'> {isSubmitting ? 'Enviando...' : 'Enviar'} 
+            </button>
+          </Form>
       }
-    })
-      .then(()=>{
-        navigate('/instrumentsPage')
-      })
-      .catch(()=>{
-        setError(true)
-      })
-  }
-
-  if(error) return <h1>Error. it can't add instrument</h1>
-
-  return(
-    <div>
-      <form onSubmit={handleSubmitForm}  className='AddInstrument' action=''>
-        <label htmlFor='name' className='AddInstrument__label'>Name:
-          <input type='text' className='AddInstrument__input' id='name' name='name' 
-          onChange={(e)=>setName(e.target.value)} value={name} />
-        </label>
-        <label htmlFor='price' className='AddInstrument__label'>Price:
-          <input type='number' className='AddInstrument__input' id='price' name='price'
-          onChange={(e)=>setPrice(e.target.value)} value={price}/>
-        </label>
-        <label htmlFor='description' className='AddInstrument__label'>Description:
-          <input type='text' className='AddInstrument__input' id='description' name='description'
-          onChange={(e)=>setDescription(e.target.value)} value={description}/>
-        </label>
-        <label htmlFor='type' className='AddInstrument__label'>Type:
-          <input type='text' className='AddInstrument__input' id='type' name='type'
-          onChange={(e)=>setType(e.target.value)} value={type} />
-        </label>
-        <button type='submit' className='AddInstrument__button'>Add Instument</button>
-      </form>
-      <div className='AddInstrument__contenedor__button'>
+    </Formik>
+    <div className='AddInstrument__contenedor__button'>
         <button> 
           <Link to='/instrumentsPage' className=''>Back</Link>
         </button>
-      </div>
     </div>
+  </>
   )
 }
 

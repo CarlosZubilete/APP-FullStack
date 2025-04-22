@@ -8,18 +8,21 @@ import InstrumentList from './InstrumentList.jsx';
 function InstrumentPage(){
 
   const[listAll, setListaALL] = useState([]);
-  const {instruments: listaInstrumentos, loading, error} = useInstruments();
+  // valor : alias
+  const {instruments: instrumentos, loading, error} = useInstruments();
 
   
   // PORQUE ? 
   /* 
     instruments = instrumentos. 
     listaInstrumentos = instruments.
+    underdine -> no exite 
+    null -> exite pero no tiene valor.
   */
 
   useEffect(()=>{
-    setListaALL(listaInstrumentos)
-  },[listaInstrumentos])
+    setListaALL(instrumentos)
+  },[instrumentos])
 
   if(error) return <h1>Error</h1>
   if(loading) return <h1>Cargando...</h1>

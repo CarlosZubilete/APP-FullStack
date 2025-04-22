@@ -21,7 +21,7 @@ function DeleteInstrument(){
     })
 
     //3. Enviamos la peticion POST
-    axios.delete(`http://localhost:9000/api/instrumentos/${id.toString()}`,JSON.stringify(body),{
+    axios.delete(`http://localhost:9000/instruments/${id.toString()}`,JSON.stringify(body),{
       headers: {
         'Content-Type': 'application/json'
       }

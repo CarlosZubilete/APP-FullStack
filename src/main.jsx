@@ -33,8 +33,16 @@ const router = createBrowserRouter([
           Component: InstrumentPage
         },
         {
-          path: '/addInstrument',
+          path: '/instrumentsPage/new',
           Component: AddInstrument,
+        },
+        {
+          path: '/instrumentsPage/:id/edit',
+          Component: AddInstrument,
+        },
+        {
+          path: '/instrumentsPage/:id/delete',
+          Component: DeleteInstrument
         },
         {
           path: '/editInstrument',
@@ -42,9 +50,8 @@ const router = createBrowserRouter([
         },
         {
           path: '/deleteInstrument',
-          Component: DeleteInstrument,
+          element: <p> This Component have been actualied</p>
         }
-        
       ]
   }
 ])

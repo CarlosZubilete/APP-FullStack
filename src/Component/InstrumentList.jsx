@@ -1,5 +1,6 @@
 import InstrumentCard from './InstrumentCard';
 import '../styleSheet/InstrumentList.css'
+import { Link } from 'react-router';
 
 function InstrumentList({listaInstrumentos}){
 
@@ -16,12 +17,18 @@ function InstrumentList({listaInstrumentos}){
         listaInstrumentos.map((instrumento) => 
           <li className='instumentList__li' key={instrumento.id}>
             <InstrumentCard instrument={{
-              id: instrumento.id, 
+              // id: instrumento.id, 
               name: instrumento.name,
               price: instrumento.price,
               description: instrumento.description,
-              type: instrumento.type
+              type: instrumento.type,
             }}/>
+            <Link to={`/instrumentsPage/${instrumento.id}/edit`}>
+                <button>Edit</button>
+            </Link>
+            <Link to={`/instrumentsPage/${instrumento.id}/delete`}>
+                <button>Delete</button>
+            </Link>
           </li>
         )
       }  

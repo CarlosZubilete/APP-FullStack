@@ -7,7 +7,7 @@ function NavBarInstruments(){
     <nav className='navBarInstrument'>
       <ul className='navBarInstrument__ul'>
         <li className='navBarInstrument__ul__li' >
-          <Link to='/addInstrument' className='navBarInstrument__ul__li__a'>Add</Link>
+          <Link to='/instrumentsPage/new' className='navBarInstrument__ul__li__a'>Add</Link>
         </li>
         <li className='navBarInstrument__ul__li' >
           <Link to='/editInstrument' className='navBarInstrument__ul__li__a'>Edit</Link>

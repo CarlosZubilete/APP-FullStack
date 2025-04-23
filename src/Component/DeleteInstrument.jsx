@@ -1,27 +1,37 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //import '../styleSheet/EditInstrument.css'
 import axios from 'axios';
-import { useNavigate,Link } from 'react-router';
+import {Link ,useParams, useNavigate} from 'react-router'; 
+import InstrumentCard from './InstrumentCard';
 
 
 function DeleteInstrument(){
 
-  const[id,setId] = useState('');
+  const {id} = useParams(); 
+  const [instrumento,setInstrumento] = useState({})
+  const [error,setError] = useState(false)
 
-  const[error,setError] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    axios.get(`http://localhost:9000/instruments/${id}`)
+    .then((response)=>{
+      setInstrumento(response.data)
+    })
+    .catch(()=>{
+      setError(true)
+    })
+  }, [])
+
+
+  if(error) return <p>Error.. </p>;
   
   const handleSubmitForm = (evento) => {
-    // 1. Evitamos que se envie el formulario
-    evento.preventDefault();
-    //2. Creamos un objeto json 
-    const body = Object({
-      id,
-    })
 
-    //3. Enviamos la peticion POST
-    axios.delete(`http://localhost:9000/instruments/${id.toString()}`,JSON.stringify(body),{
+    evento.preventDefault();
+  
+    axios.delete(`http://localhost:9000/instruments/${id}`,{
       headers: {
         'Content-Type': 'application/json'
       }
@@ -29,27 +39,23 @@ function DeleteInstrument(){
       .then(()=>{
         navigate('/instrumentsPage')
       })
-      .catch(()=>{
-        setError(true)
-      })
+
   }
 
-  if(error) return <h1>Error. We  can't Delete instrument</h1>
-
-  return(
+  return (
     <div>
-      <form onSubmit={handleSubmitForm}  className='AddInstrument' action=''>
-        <label htmlFor='id' className='AddInstrument__label'>Id:
-          <input type='number' className='AddInstrument__input' id='id' name='id'
-          onChange={(e)=>setId(e.target.value)} value={id} />
-        </label>
-        <button type='submit' className='AddInstrument__button'>Delete Instument</button>
-      </form>
-      <div className='AddInstrument__contenedor__button'>
-        <button> 
-          <Link to='/instrumentsPage' className=''>Back</Link>
-        </button>
-      </div>
+      <h4>Yoo'll deleted the next INSTRUMENT</h4>
+      <InstrumentCard instrument={{
+              // id: instrumento.id, 
+              name: instrumento.name,
+              price: instrumento.price,
+              description: instrumento.description,
+              type: instrumento.type,
+            }}/>
+      <button type='button' onClick={handleSubmitForm}>Delete</button>
+      <Link to='/instrumentsPage' >
+        <button>Back</button>
+      </Link>
     </div>
   )
 }

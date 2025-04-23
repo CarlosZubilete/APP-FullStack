@@ -20,3 +20,9 @@
   letter-spacing: .1em;
   margin: 4px 0;
 }
+
+.instrumentCard__p--span{
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+

@@ -1,0 +1,24 @@
+.deleteInstrument{
+  /* border: 1px solid red; */
+  border-bottom: 1px solid #f5f5f5;
+  border-top: 1px solid #f5f5f5;
+  padding: .5rem;
+}
+
+.deleteInstrument__title{
+  /* border: 1px solid red; */
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: #f5f5f5;
+  margin: 0.1rem 0rem;
+  letter-spacing: .1rem;
+}
+
+.deleteInstrumente__buttons{
+  margin: .5rem 0 -.2rem 0;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-evenly;
+
+}

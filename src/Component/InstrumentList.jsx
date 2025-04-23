@@ -23,12 +23,14 @@ function InstrumentList({listaInstrumentos}){
               description: instrumento.description,
               type: instrumento.type,
             }}/>
+          <div className='instumentList__link'>
             <Link to={`/instrumentsPage/${instrumento.id}/edit`}>
                 <button>Edit</button>
             </Link>
             <Link to={`/instrumentsPage/${instrumento.id}/delete`}>
                 <button>Delete</button>
             </Link>
+          </div>
           </li>
         )
       }  

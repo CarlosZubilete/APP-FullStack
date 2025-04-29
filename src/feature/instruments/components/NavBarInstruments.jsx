@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import '../styleSheet/NavBarInstuments.css';
+import '../styles/NavBarInstuments.css';
 
 function NavBarInstruments(){
 

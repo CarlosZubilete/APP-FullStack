@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import '../styleSheet/AddInstrument.css'
 import { useNavigate,Link , useParams} from 'react-router';
 import { Formik, Form , Field , ErrorMessage} from 'formik';
-import useNewInstrumet from './useNewInstrument.jsx';
+import '../styles/AddInstrument.css'
+import useNewInstrumet from '../hooks/useNewInstrument';
 
 
 const ErrorBack = () => {

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import '../styleSheet/InstrumentePage.css';
-import NavBarInstruments from './NavBarInstruments.jsx';
-import useInstruments from './useInstruments.jsx';
-import InstrumentList from './InstrumentList.jsx';
+import '../styles/InstrumentePage.css'
+import NavBarInstruments from '../components/NavBarInstruments.jsx';
+import useInstruments from '../hooks/useInstruments.jsx';
+import InstrumentList from '../components/InstrumentList';
 
 // http://localhost:9000/api/instrumentos
 function InstrumentPage(){

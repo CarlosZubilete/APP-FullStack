@@ -1,6 +1,7 @@
-import InstrumentCard from './InstrumentCard';
-import '../styleSheet/InstrumentList.css'
 import { Link } from 'react-router';
+import '../styles/InstrumentList.css';
+import InstrumentCard from './InstrumentCard';
+
 
 function InstrumentList({listaInstrumentos}){
 

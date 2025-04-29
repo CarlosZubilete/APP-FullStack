@@ -1,5 +1,4 @@
-import '../styleSheet/InstrumentCard.css'
-
+import '../styles/InstrumentCard.css'
 
 // Renderizado por  Digimonlist.jsx
 function InstrumentCard({instrument}){

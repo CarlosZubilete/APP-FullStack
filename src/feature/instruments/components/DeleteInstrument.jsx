@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import '../styleSheet/DeleteInstrument.css'
 import axios from 'axios';
 import {Link ,useParams, useNavigate} from 'react-router'; 
 import InstrumentCard from './InstrumentCard';
-
+import '../styles/DeleteInstrument.css'
 
 function DeleteInstrument(){
 

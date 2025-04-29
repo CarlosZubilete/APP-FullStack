@@ -3,12 +3,14 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import './index.css'
 import App from './App.jsx'
+// DIGIMONS:
 import DigimonPage from './Component/DigimonPage.jsx'
 import DigimonDetail from './Component/DigimonDetail.jsx'
-import InstrumentPage from './Component/InstrumentPage.jsx'
-import AddInstrument from './Component/AddInstrument.jsx'
-import EditInstrument from './Component/EditInstrument.jsx'
-import DeleteInstrument from './Component/DeleteInstrument.jsx'
+// Instruments:
+import InstrumentPage from '@feature/instruments/page/InstrumentPage.jsx'
+import AddInstrument from '@feature/instruments/components/AddInstrument.jsx'
+import EditInstrument from '@feature/instruments/components/EditInstrument.jsx'
+import DeleteInstrument from '@feature/instruments/components/DeleteInstrument.jsx'
 
 
 const router = createBrowserRouter([

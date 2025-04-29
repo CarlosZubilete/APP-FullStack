@@ -1,5 +1,5 @@
-import axios from 'axios';
 import {useState, useEffect} from 'react';
+import instrumentService from '../services/instrumentService';
 
 function useInstruments(){
 
@@ -8,9 +8,9 @@ function useInstruments(){
   const [error,setError] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:9000/instruments')
-      .then((response) => {
-        setInstruments(response.data);
+    instrumentService.find()
+      .then((data)=>{
+        setInstruments(data)
       })
       .catch(()=>{
         setError(true)

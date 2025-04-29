@@ -3,7 +3,7 @@ import { useNavigate,Link , useParams} from 'react-router';
 import { Formik, Form , Field , ErrorMessage} from 'formik';
 import '../styles/AddInstrument.css'
 import useNewInstrumet from '../hooks/useNewInstrument';
-
+import { InstrumentSchema } from '../schemas/instrumentSchema';
 
 const ErrorBack = () => {
   return <h2 style={{fontSize:'1.2rem', color:'red'}}>BackEnd says: "Error Bad Request" </h2>;
@@ -19,7 +19,7 @@ function AddInstrument(){
   // const {id} = useParams();
   const params = useParams();
   
-  const{handleSubmitForm,error,success,InstrumentSchema,instrument} = useNewInstrumet(params.id);
+  const{handleSubmitForm,error,success,instrument} = useNewInstrumet(params.id);
   
 
   const navigate = useNavigate();

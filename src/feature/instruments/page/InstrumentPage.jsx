@@ -27,7 +27,6 @@ function InstrumentPage(){
   if(error) return <h1>Error</h1>
   if(loading) return <h1>Cargando...</h1>
 
-
   
   return(
     <div className='instrumentePage'>

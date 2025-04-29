@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import {Link ,useParams, useNavigate} from 'react-router'; 
 import InstrumentCard from './InstrumentCard';
 import '../styles/DeleteInstrument.css'
+import instrumentService from '../services/instrumentService';
 
 function DeleteInstrument(){
 
@@ -14,9 +14,9 @@ function DeleteInstrument(){
   const navigate = useNavigate();
 
   useEffect(()=>{
-    axios.get(`http://localhost:9000/instruments/${id}`)
-    .then((response)=>{
-      setInstrumento(response.data)
+    instrumentService.findByID(id)
+    .then((data)=>{
+      setInstrumento(data)
     })
     .catch(()=>{
       setError(true)
@@ -32,16 +32,13 @@ function DeleteInstrument(){
 
     setSending(true);
 
-    setTimeout(()=>{
-      axios.delete(`http://localhost:9000/instruments/${id}`,{
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
+    setTimeout(() => {
+      instrumentService.deleteByID(id)
       .then(()=>{
         navigate('/instrumentsPage')
       })
     }, 2500)
+
   }
 
   return (

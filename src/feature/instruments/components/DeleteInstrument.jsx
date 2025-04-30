@@ -1,45 +1,23 @@
-import { useEffect, useState } from 'react';
-import {Link ,useParams, useNavigate} from 'react-router'; 
+import {Link ,useParams} from 'react-router'; 
 import InstrumentCard from './InstrumentCard';
 import '../styles/DeleteInstrument.css'
-import instrumentService from '../services/instrumentService';
+import  useDeleteInstrument  from '../hooks/useDeleteInstrument';
 
 function DeleteInstrument(){
 
   const {id} = useParams(); 
-  const [instrumento,setInstrumento] = useState({})
-  const [error,setError] = useState(false)
-  const [sending,setSending] = useState(false);
+  // const [element, setElement] = useState();
 
-  const navigate = useNavigate();
-
-  useEffect(()=>{
-    instrumentService.findByID(id)
-    .then((data)=>{
-      setInstrumento(data)
-    })
-    .catch(()=>{
-      setError(true)
-    })
-  }, [])
-
-
-  if(error) return <p>Error.. </p>;
+  // valor : alias
+  const {instrumento, error, sending,handleSubmitForm } = useDeleteInstrument(id);
   
-  const handleSubmitForm = (evento) => {
+  // useEffect(()=>{
+  //   setElement(instrumento)
+  // }, [instrumento])
+  
+  if(error) return <p>Error.. </p>;
+  if (!instrumento.name) return <p>Cargando...</p>;
 
-    evento.preventDefault();
-
-    setSending(true);
-
-    setTimeout(() => {
-      instrumentService.deleteByID(id)
-      .then(()=>{
-        navigate('/instrumentsPage')
-      })
-    }, 2500)
-
-  }
 
   return (
     <div className='deleteInstrument'>
